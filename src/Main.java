@@ -1,8 +1,7 @@
 
 import java.util.Random;
 import java.util.Scanner;
-public class Main
-{
+public class Main {
     public static void gamePlay() {
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
@@ -17,8 +16,9 @@ public class Main
             dieRandomSelect = rand.nextInt(0, 6); // creates and prints first 5 random dice
             System.out.print(dice[dieRandomSelect]);
             playersDiceList[z] = dieRandomSelect; // used for storing the players dice in between rolls
-            // its were the pointer is at in the list, not the num
+            // it's where the pointer is at in the list, not the num
             // so [1] = 0
+            // Make this more intuitive for the user - Joseph
         }
         do // This is used to ask player if they want to change dice and re prints them.
         {
