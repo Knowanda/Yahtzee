@@ -9,8 +9,9 @@ public class Main {
         int end;
         int changeNum;
         int dieRandomSelect;
-        String[] dice = {"⚀", "⚁", "⚂", "⚃", "⚄", "⚅"};
+        String[] dice = {"[1]", "[2]", "[3]", "[4]", "[5]", "[6]"};
         int[] playersDiceList = {0, 0, 0, 0, 0};
+        int diceRollCount = 0;
         for (int z = 0; z < die; z++) // initializes and prints dice
         {
             dieRandomSelect = rand.nextInt(0, 6); // creates and prints first 5 random dice
@@ -34,16 +35,18 @@ public class Main {
                 int tempInt;
                 for (int z = 0; z < changeNum; z++) // loop that asks for die needing to be changed and switches it.
                 {
-                    System.out.print("What is dice number " + z + " needing to be changed?");
+                    System.out.print("What is dice number " + (z + 1) + " needing to be changed?");
                     tempInt = input.nextInt();
+                    tempInt--;
                     playersDiceList[tempInt] = rand.nextInt(0, 6);
                 }
                 for (int z = 0; z < die; z++) // prints new dice... probably should have put this in a function.
                 {
                     System.out.print(dice[playersDiceList[z]]);
                 }
+                diceRollCount ++;
             }
-        }while (end != 3) ;
+        } while (end != 3 && diceRollCount != 3);
 
         System.out.print("\n");
     }
@@ -57,6 +60,7 @@ public class Main {
         playerCount = input.nextInt();
         for (int i = 0; i < playerCount; i++)
         {
+            System.out.println("Player " + (i+1) + "'s turn.");
             Main.gamePlay();
         }
     }
