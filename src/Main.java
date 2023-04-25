@@ -54,7 +54,6 @@ public class Main {
     {
         Scanner input = new Scanner(System.in);
         int playerCount;
-
         System.out.print("Welcome to Yahtzee!\n");
         System.out.print("How many players would like to play?\n");
         playerCount = input.nextInt();
