@@ -53,14 +53,16 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
+        PrintScoreboard myObj = new PrintScoreboard();
+
         int playerCount;
         System.out.print("Welcome to Yahtzee!\n");
         System.out.print("How many players would like to play?\n");
         playerCount = input.nextInt();
-        for (int i = 0; i < playerCount; i++)
-        {
-            System.out.println("Player " + (i+1) + "'s turn.");
+        for (int i = 0; i < playerCount; i++) {
+            System.out.println("Player " + (i + 1) + "'s turn.");
             Main.gamePlay();
         }
+        myObj.printio(playerCount);
     }
 }
