@@ -75,4 +75,17 @@ Section 2 Totals    |
 TOTAL               |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+If we have extra time we can check the scores to make sure they make sense, but only if we have extra time. A lot of these have set values or at least a maximum limit of what's physically possible.
+1. Ones
+2. Twos
+3. Threes
+4. Fours
+5. Fives
+6. Sixes
+7. 3 of a Kind
+8. 4 of a Kind
+9. Small Straight
+10. Large Straight
+11. Chance
+12. Yahtzee
 

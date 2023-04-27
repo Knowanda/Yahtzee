@@ -50,7 +50,7 @@ public class Main {
 
         System.out.print("\n");
     }
-    public static void main(String[] args)
+    public static void main(String[] args) //This appears to never be called
     {
         Scanner input = new Scanner(System.in);
         PrintScoreboard myObj = new PrintScoreboard();

@@ -4,10 +4,7 @@ public class PrintScoreboard {
     public static void printio(int playerCount)
     {
         Scanner input = new Scanner(System.in);
+        PrintScoreboard scores = new PrintScoreboard();
         //call player class
-        System.out.println("Ones:");
-        for(int i = 0; i < playerCount; i++){
-            System.out.println("Player " + (i+1) + ": "); //put in reference to wherever in the scores array it is (controlled by i)
-        }
     }
 }
