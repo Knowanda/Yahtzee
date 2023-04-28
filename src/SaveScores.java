@@ -2,9 +2,8 @@ import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.Scanner;
 public class SaveScores {
-        public static void askFerScore () {
+        public static void askFerScore (int playerCount, int[][]scoreboard) {
         Scanner input = new Scanner(System.in);
-        int[][] scoreboard = {{0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0}}; //Allows for 5 plauers
         System.out.println("What section is your score in? Type in the number. \n1. Ones\n" +
                 "2. Twos\n" +
                 "3. Threes\n" +
@@ -18,7 +17,13 @@ public class SaveScores {
                 "11. Chance\n" +
                 "12. Yahtzee");
         int type = input.nextInt();
+        type--;
         System.out.println("What did you score?");
         int score = input.nextInt();
+        if (score > 50) {
+                //Rickvenge
+        }
+        scoreboard[playerCount][type] = score; //First is player #, 2nd is type, set it to the score.
     }
 }
+

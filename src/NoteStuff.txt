@@ -89,3 +89,7 @@ If we have extra time we can check the scores to make sure they make sense, but 
 11. Chance
 12. Yahtzee
 
+
+Ones:
+Player 1:
+Player 2:
