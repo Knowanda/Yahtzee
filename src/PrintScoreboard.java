@@ -1,18 +1,18 @@
 import java.util.Random;
 import java.util.Scanner;
 public class PrintScoreboard {
-    public static void printio(int playerCount, int[][]scoreboard)
+    public static void printio()
     {
         Scanner input = new Scanner(System.in);
-        String[] names = {"Ones: ", "Twos: ","Threes: ","Fours: ","Fives: ","Sixes: ", "3 of a Kind: ", "4 of a Kind: ", "Small Straight: ", "Large Straight: ", "Chance: ", "Yahtzee: "};
-        //call player class]
-        for(int i = 0; i < 12; i++) {
-            System.out.println(names[i]);
-            for(int z = 0; z <  playerCount; z++) {
-                System.out.println("   Player " + (z+1) + ": " + scoreboard[z][i]);
-            }
-        }
-        System.out.println();
+        System.out.println("SCORESHEET (come up with pun later)\n" +
+                "------------ Ones    Twos    Threes    Fours   Fives   Sixes    Section 1 Totals   |    3 of a Kind    Four of a Kind     Small Straight      Large Straight    Chance    YAHTZEE   Section 2 Totals  |  TOTAL\n" +
+                "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n" +
+                "Player 1:   1s    *   2s   *   3s   *   4s   *  5s   *  6s                         |\n" +
+                "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n" +
+                "Player 2:                                                                          |\n" +
+                "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n" +
+                "Player 3:                                                                          |\n" +
+                "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     }
 }
 //Changes
