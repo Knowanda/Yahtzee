@@ -20,7 +20,7 @@ public class SaveScores {
                 type--;
                 System.out.println("What did you score?");
                 int score = input.nextInt();
-                scoreboard[type][playerCount] = score; //First is player #, 2nd is type, set it to the score.
+                scoreboard[playerCount][type] = score; //First is player #, 2nd is type, set it to the score.
         }
 }
 
