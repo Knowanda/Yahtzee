@@ -53,29 +53,16 @@ public class Main {
     public static void main(String[] args) //This appears to never be called
     {
         Scanner input = new Scanner(System.in);
-        SaveScores myObj = new SaveScores();
-        PrintScoreboard myObj2 = new PrintScoreboard();
+        PrintScoreboard myObj = new PrintScoreboard();
 
-        int[][] scoreboard = {{0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0}}; //Allows for 5 players
         int playerCount;
-////Hello there
         System.out.print("Welcome to Yahtzee!\n");
         System.out.print("How many players would like to play?\n");
         playerCount = input.nextInt();
-        if(playerCount > 5){
-            System.out.println("You can't do that! Go edit the code! You suck!");
-            for (int hahayousuck = 0; hahayousuck < 100; hahayousuck++) {
-                System.out.println("Haha you suck.");
-                hahayousuck--;
-            }
+        for (int i = 0; i < playerCount; i++) {
+            System.out.println("Player " + (i + 1) + "'s turn.");
+            Main.gamePlay();
         }
-        for(int x = 0; x < 12; x++) {
-            for (int i = 0; i < playerCount; i++) {
-                System.out.println("Player " + (i + 1) + "'s turn.");
-                Main.gamePlay();
-                myObj.askFerScore(playerCount, scoreboard);
-            }
-            myObj2.printio(playerCount, scoreboard);
-        }
+        myObj.printio(playerCount);
     }
 }
