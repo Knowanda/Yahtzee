@@ -1,4 +1,3 @@
-
 import java.util.Random;
 import java.util.Scanner;
 public class Main {
@@ -17,9 +16,9 @@ public class Main {
             dieRandomSelect = rand.nextInt(0, 6); // creates and prints first 5 random dice
             System.out.print(dice[dieRandomSelect]);
             playersDiceList[z] = dieRandomSelect; // used for storing the players dice in between rolls
-            // it's where the pointer is at in the list, not the num
-            // so [1] = 0
-            // Make this more intuitive for the user - Joseph
+// it's where the pointer is at in the list, not the num
+// so [1] = 0
+// Make this more intuitive for the user - Joseph
         }
         do // This is used to ask player if they want to change dice and re prints them.
         {
@@ -53,16 +52,29 @@ public class Main {
     public static void main(String[] args) //This appears to never be called
     {
         Scanner input = new Scanner(System.in);
-        PrintScoreboard myObj = new PrintScoreboard();
+        SaveScores myObj = new SaveScores();
+        PrintScoreboard myObj2 = new PrintScoreboard();
 
+        int[][] scoreboard = {{0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0}}; //Allows for 5 players
         int playerCount;
+////Hello there II
         System.out.print("Welcome to Yahtzee!\n");
         System.out.print("How many players would like to play?\n");
         playerCount = input.nextInt();
-        for (int i = 0; i < playerCount; i++) {
-            System.out.println("Player " + (i + 1) + "'s turn.");
-            Main.gamePlay();
+        if(playerCount > 5){
+            System.out.println("You can't do that! Go edit the code! You suck!");
+            for (int hahayousuck = 0; hahayousuck < 100; hahayousuck++) {
+                System.out.println("Haha you suck.");
+                hahayousuck--;
+            }
         }
-        myObj.printio(playerCount);
+        for(int x = 0; x < 12; x++) {
+            for (int i = 0; i < playerCount; i++) {
+                System.out.println("Player " + (i + 1) + "'s turn.");
+                Main.gamePlay();
+                myObj.askFerScore(playerCount, scoreboard);
+            }
+            myObj2.printio(playerCount, scoreboard);
+        }
     }
 }
