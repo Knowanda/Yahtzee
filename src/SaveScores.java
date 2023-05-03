@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.Scanner;
 public class SaveScores {
-        public static void askFerScore (int playerCount, int[][]scoreboard) {
+        public static void askFerScore (int playerCount, int scoreboard[][]) {
                 Scanner input = new Scanner(System.in);
                 System.out.println("What section is your score in? Type in the number. \n1. Ones\n" +
                         "2. Twos\n" +
