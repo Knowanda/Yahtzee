@@ -18,6 +18,7 @@ public class SaveScores {
                         "12. Yahtzee");
                 int type = input.nextInt();
                 type--;
+                int score = 0;
                 int[] dice = {1, 2, 3, 4, 5}; //here as a placeholder, once you figure out how to import the actual dice, delete this.
                 int ones = 0, twos = 0, threes = 0, fours = 0, fives = 0, sixes = 0;
                 for (int i = 0; i < 5; i++){
@@ -41,12 +42,55 @@ public class SaveScores {
                         }
                 }
                 System.out.println("Ones: " + ones + " Twos: " + twos + " Threes: " + threes + " Fours: " + fours + " Fives: " + fives + " Sixes: " + sixes); //tests the code to see if it's working.
-                for (int i = 0; i > 6; i++) {
-                        System.out.println(dice[i]);
+                for (int i = 0; i < 6; i++) {
+                        System.out.print(dice[i]);
+                }
+                if (type == 0){ //Ones
+                     score = ones;
+                }
+                if (type == 1){ //Twos
+                        score = twos*2;
+                }
+                if (type == 2){ //Threes
+                        score = threes*3;
+                }
+                if (type == 3){ //Fours
+                        score = fours*5;
+                }
+                if (type == 4){ //Fives
+                        score = fives*5;
+                }
+                if (type == 5){ //Sixes
+                        score = sixes*6;
+                }
+                if (type == 6){ //3 of a Kind
+                        if (ones > 3 || twos > 3 || threes > 3 || fours > 3 || fives > 3 || sixes > 3){
+                                score = ones+twos+threes+fours+fives+sixes;
+                        } else {
+                                score = 0;
+                        }
+                }
+                if (type == 7){ //4 of a Kind
+                        if (ones > 4 || twos > 4 || threes > 4 || fours > 4 || fives > 4 || sixes > 4){
+                                score = ones+twos+threes+fours+fives+sixes;
+                        } else {
+                                score = 0;
+                        }
+                }
+                //Small and Large Straight
+                if (type == 10) { //Chance
+                        score = ones+twos+threes+fours+fives+sixes;
+                }
+                if (type == 11){ //Yahtzee
+                        if (ones == 5 || twos == 5 || threes == 5 || fours == 5 || fives == 5 || sixes == 5){
+                                score = 50;
+                        } else {
+                                score = 0;
+                        }
                 }
                 //System.out.println("What did you score?");
                 //int score = input.nextInt();
-                //scoreboard[playerCount][type] = score; //First is player #, 2nd is type, set it to the score.
+                scoreboard[playerCount][type] = score; //First is player #, 2nd is type, set it to the score.
         }
 }
 
