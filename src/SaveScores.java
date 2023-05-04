@@ -18,9 +18,35 @@ public class SaveScores {
                         "12. Yahtzee");
                 int type = input.nextInt();
                 type--;
-                System.out.println("What did you score?");
-                int score = input.nextInt();
-                scoreboard[playerCount][type] = score; //First is player #, 2nd is type, set it to the score.
+                int[] dice = {1, 2, 3, 4, 5}; //here as a placeholder, once you figure out how to import the actual dice, delete this.
+                int ones = 0, twos = 0, threes = 0, fours = 0, fives = 0, sixes = 0;
+                for (int i = 0; i < 5; i++){
+                        if(dice[i] == 1) {
+                                ones++;
+                        }
+                        if(dice[i] == 2) {
+                                twos++;
+                        }
+                        if(dice[i] == 3) {
+                                threes++;
+                        }
+                        if(dice[i] == 4) {
+                                fours++;
+                        }
+                        if(dice[i] == 5) {
+                                fives++;
+                        }
+                        if(dice[i] == 6) {
+                                sixes++;
+                        }
+                }
+                System.out.println("Ones: " + ones + " Twos: " + twos + " Threes: " + threes + " Fours: " + fours + " Fives: " + fives + " Sixes: " + sixes); //tests the code to see if it's working.
+                for (int i = 0; i > 6; i++) {
+                        System.out.println(dice[i]);
+                }
+                //System.out.println("What did you score?");
+                //int score = input.nextInt();
+                //scoreboard[playerCount][type] = score; //First is player #, 2nd is type, set it to the score.
         }
 }
 

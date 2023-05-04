@@ -2,6 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 public class Main {
     public static void gamePlay() {
+        //pass from here to a new method in save scores
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
         int die = 5;
@@ -37,6 +38,12 @@ public class Main {
                     System.out.print("What is dice number " + (z + 1) + " needing to be changed?");
                     tempInt = input.nextInt();
                     tempInt--;
+                    if (tempInt > 5) {
+                        for (int i = 0; i > tempInt; i++){
+                            //Rickroll
+
+                        }
+                    }
                     playersDiceList[tempInt] = rand.nextInt(0, 6);
                 }
                 for (int z = 0; z < die; z++) // prints new dice... probably should have put this in a function.
@@ -55,11 +62,15 @@ public class Main {
         SaveScores myObj = new SaveScores();
         PrintScoreboard myObj2 = new PrintScoreboard();
 
-        int[][] scoreboard = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}}; //Allows for 5 players
+        int[][] scoreboard = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}}; //Allows for 5 players
         int playerCount;
         System.out.print("Welcome to Yahtzee!\n");
         System.out.print("How many players would like to play?\n");
         playerCount = input.nextInt();
+        if (playerCount == 12345) {
+            playerCount = 3;
+            myObj2.printio(playerCount, scoreboard); //For programming. Just a code so you can see the scoreboard without having to go through all the gameplay steps.
+        }
         if(playerCount > 5){
             System.out.println("You can't do that! Go edit the code! You suck!");
             for (int hahayousuck = 0; hahayousuck < 100; hahayousuck++) {
@@ -75,6 +86,7 @@ public class Main {
             }
             myObj2.printio(playerCount, scoreboard);
         }
+
         System.out.println("The game is over! Whoever cheated the most wins!");
     }
 
