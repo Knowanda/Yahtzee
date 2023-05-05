@@ -76,7 +76,20 @@ public class SaveScores {
                                 score = 0;
                         }
                 }
-                //Small and Large Straight
+                if (type == 8){ //Small Straight
+                        if (ones  > 0 && twos > 0 && threes > 0 && fours > 0 || twos > 0 && threes > 0 && fours > 0 && fives > 0 || threes > 0 && fours > 0 && fives > 0 && sixes > 0){
+                                score = 40;
+                        } else {
+                                score = 0;
+                        }
+                }
+                if (type == 9){ //Large Straight
+                        if (ones  > 0 && twos > 0 && threes > 0 && fours > 0 && fives > 0 || twos > 0 && threes > 0 && fours > 0 && fives > 0 && sixes > 0){
+                                score = 40;
+                        } else {
+                                score = 0;
+                        }
+                }
                 if (type == 10) { //Chance
                         score = ones+twos+threes+fours+fives+sixes;
                 }
