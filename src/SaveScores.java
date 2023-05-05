@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.Scanner;
 public class SaveScores {
-        public static void askFerScore (int playerCount, int scoreboard[][]) {
+        public static void askFerScore (int playerCount, int scoreboard[][], int dice[]) {
                 Scanner input = new Scanner(System.in);
                 System.out.println("What section is your score in? Type in the number. \n1. Ones\n" +
                         "2. Twos\n" +
@@ -18,7 +18,6 @@ public class SaveScores {
                         "12. Yahtzee");
                 int type = input.nextInt();
                 type--;
-                int[] dice = {1, 2, 3, 4, 5};
                 int score = 0;
                 int ones = 0, twos = 0, threes = 0, fours = 0, fives = 0, sixes = 0;
                 for (int i = 0; i < 5; i++){
@@ -77,20 +76,7 @@ public class SaveScores {
                                 score = 0;
                         }
                 }
-                if (type == 8){ //Small Straight
-                        if (ones  > 0 && twos > 0 && threes > 0 && fours > 0 || twos > 0 && threes > 0 && fours > 0 && fives > 0 || threes > 0 && fours > 0 && fives > 0 && sixes > 0){
-                                score = 40;
-                        } else {
-                                score = 0;
-                        }
-                }
-                if (type == 9){ //Large Straight
-                        if (ones  > 0 && twos > 0 && threes > 0 && fours > 0 && fives > 0 || twos > 0 && threes > 0 && fours > 0 && fives > 0 && sixes > 0){
-                                score = 40;
-                        } else {
-                                score = 0;
-                        }
-                }
+                //Small and Large Straight
                 if (type == 10) { //Chance
                         score = ones+twos+threes+fours+fives+sixes;
                 }

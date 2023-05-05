@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 public class Main {
-    public static void gamePlay() {
+    public static void gamePlay(int[] playersDiceList) {
         //pass from here to a new method in save scores
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
@@ -10,7 +10,7 @@ public class Main {
         int changeNum;
         int dieRandomSelect;
         String[] dice = {"[1]", "[2]", "[3]", "[4]", "[5]", "[6]"};
-        int[] playersDiceList = {0, 0, 0, 0, 0};
+
         int diceRollCount = 0;
         for (int z = 0; z < die; z++) // initializes and prints dice
         {
@@ -67,6 +67,8 @@ public class Main {
         System.out.print("Welcome to Yahtzee!\n");
         System.out.print("How many players would like to play?\n");
         playerCount = input.nextInt();
+        int[] playersDiceList = {0, 0, 0, 0, 0};
+
         if (playerCount == 12345) {
             playerCount = 3;
             myObj2.printio(playerCount, scoreboard); //For programming. Just a code so you can see the scoreboard without having to go through all the gameplay steps.
@@ -81,8 +83,8 @@ public class Main {
         for(int x = 0; x < 12; x++) {
             for (int i = 0; i < playerCount; i++) {
                 System.out.println("Player " + (i + 1) + "'s turn.");
-                Main.gamePlay();
-                myObj.askFerScore(i, scoreboard);
+                Main.gamePlay(playersDiceList);
+                myObj.askFerScore(i, scoreboard, playersDiceList);
             }
             myObj2.printio(playerCount, scoreboard);
         }
