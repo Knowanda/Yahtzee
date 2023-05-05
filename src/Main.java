@@ -14,7 +14,7 @@ public class Main {
         int diceRollCount = 0;
         for (int z = 0; z < die; z++) // initializes and prints dice
         {
-            dieRandomSelect = rand.nextInt(0, 6); // creates and prints first 5 random dice
+            dieRandomSelect = rand.nextInt(1, 6); // creates and prints first 5 random dice
             System.out.print(dice[dieRandomSelect]);
             playersDiceList[z] = dieRandomSelect; // used for storing the players dice in between rolls
 // it's where the pointer is at in the list, not the num
@@ -38,12 +38,6 @@ public class Main {
                     System.out.print("What is dice number " + (z + 1) + " needing to be changed?");
                     tempInt = input.nextInt();
                     tempInt--;
-                    if (tempInt > 5) {
-                        for (int i = 0; i > tempInt; i++){
-                            //Rickroll
-
-                        }
-                    }
                     playersDiceList[tempInt] = rand.nextInt(0, 6);
                 }
                 for (int z = 0; z < die; z++) // prints new dice... probably should have put this in a function.

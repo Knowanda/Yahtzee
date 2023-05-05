@@ -41,9 +41,7 @@ public class SaveScores {
                         }
                 }
                 System.out.println("Ones: " + ones + " Twos: " + twos + " Threes: " + threes + " Fours: " + fours + " Fives: " + fives + " Sixes: " + sixes); //tests the code to see if it's working.
-                for (int i = 0; i < 4; i++) {
-                        System.out.print(dice[i]);
-                }
+                System.out.println();
                 if (type == 0){ //Ones
                      score = ones;
                 }
