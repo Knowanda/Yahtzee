@@ -18,8 +18,8 @@ public class SaveScores {
                         "12. Yahtzee");
                 int type = input.nextInt();
                 type--;
+                int[] dice = {1, 2, 3, 4, 5};
                 int score = 0;
-                int[] dice = {1, 2, 3, 4, 5}; //here as a placeholder, once you figure out how to import the actual dice, delete this.
                 int ones = 0, twos = 0, threes = 0, fours = 0, fives = 0, sixes = 0;
                 for (int i = 0; i < 5; i++){
                         if(dice[i] == 1) {
@@ -77,7 +77,20 @@ public class SaveScores {
                                 score = 0;
                         }
                 }
-                //Small and Large Straight
+                if (type == 8){ //Small Straight
+                        if (ones  > 0 && twos > 0 && threes > 0 && fours > 0 || twos > 0 && threes > 0 && fours > 0 && fives > 0 || threes > 0 && fours > 0 && fives > 0 && sixes > 0){
+                                score = 40;
+                        } else {
+                                score = 0;
+                        }
+                }
+                if (type == 9){ //Large Straight
+                        if (ones  > 0 && twos > 0 && threes > 0 && fours > 0 && fives > 0 || twos > 0 && threes > 0 && fours > 0 && fives > 0 && sixes > 0){
+                                score = 40;
+                        } else {
+                                score = 0;
+                        }
+                }
                 if (type == 10) { //Chance
                         score = ones+twos+threes+fours+fives+sixes;
                 }
