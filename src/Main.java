@@ -12,7 +12,7 @@ public class Main {
         String[] dice = {"[1]", "[2]", "[3]", "[4]", "[5]", "[6]"};
 
         int diceRollCount = 0;
-        for (int z = 0; z < die; z++) // initializes and prints dice
+        for (int z = 0; z < 5; z++) // initializes and prints dice
         {
             dieRandomSelect = rand.nextInt(1, 6); // creates and prints first 5 random dice
             System.out.print(dice[dieRandomSelect]);
@@ -83,8 +83,6 @@ public class Main {
             myObj2.printio(playerCount, scoreboard);
         }
 
-        System.out.println("The game is over! Whoever cheated the most wins!");
+        System.out.println("Good Game!");
     }
-
 }
-//note
